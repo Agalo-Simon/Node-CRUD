@@ -1,0 +1,92 @@
+<%- include('./partials/header') %>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            
+            <!-- Back Button Link -->
+            <div class="mb-4">
+                <a href="/items" class="text-decoration-none text-muted small">
+                    <i class="bi bi-arrow-left-short"></i> Back to Dashboard
+                </a>
+            </div>
+
+            <!-- Main Edit Form Card -->
+            <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-body p-4 p-sm-5">
+                    
+                    <div class="mb-4 text-center">
+                        <span class="badge bg-warning-subtle text-warning border border-warning-subtle mb-2 px-2.5 py-1.5 rounded-2 fw-semibold">
+                            <i class="bi bi-pencil-square me-1"></i> Editor Mode
+                        </span>
+                        <h2 class="fw-bold text-dark m-0">Modify Product</h2>
+                        <p class="text-muted small mt-1">Make your changes below to instantly overwrite this product's record in the database.</p>
+                    </div>
+
+                    <hr class="text-muted opacity-25 my-4">
+
+                    <!-- ACTION: Routes back to /items/edit/ID with current fields populated -->
+                    <form action="/items/edit/<%= item.id %>" method="POST" class="needs-validation" novalidate>
+                        
+                        <!-- Name Input -->
+                        <div class="mb-4">
+                            <label for="name" class="form-label fw-semibold text-secondary small">Product Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 text-muted">
+                                    <i class="bi bi-box-seam"></i>
+                                </span>
+                                <input type="text" class="form-control bg-light border-start-0 ps-0 py-2" id="name" name="name" value="<%= item.name %>" required>
+                            </div>
+                        </div>
+
+                        <!-- Price Input -->
+                        <div class="mb-4">
+                            <label for="price" class="form-label fw-semibold text-secondary small">Price (Rwf)</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 text-muted fw-bold">Rwf</span>
+                                <input type="number" class="form-control bg-light border-start-0 ps-0 py-2" id="price" name="price" step="0.01" min="0" value="<%= item.price %>" required>
+                            </div>
+                        </div>
+
+                        <!-- Description Input -->
+                        <div class="mb-4">
+                            <label for="description" class="form-label fw-semibold text-secondary small">Product Description</label>
+                            <textarea class="form-control bg-light py-2" id="description" name="description" rows="4" required><%= item.description %></textarea>
+                        </div> 
+                        
+                        <!-- Action Buttons -->
+                        <div class="d-grid gap-2 d-sm-flex justify-content-sm-end mt-5 pt-3 border-top border-light">
+                            <a href="/items" class="btn btn-light border px-4 py-2 order-2 order-sm-1">
+                                Cancel
+                            </a>
+                            <button type="submit" class="btn btn-warning px-4 py-2 fw-semibold shadow-sm text-dark order-1 order-sm-2">
+                                <i class="bi bi-save me-1"></i> Save Changes
+                            </button>
+                        </div>
+
+                    </form> 
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Form Validation Script -->
+<script>
+    (() => {
+        'use strict'
+        const forms = document.querySelectorAll('.needs-validation')
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+</script>
+
+<%- include('./partials/footer') %>
