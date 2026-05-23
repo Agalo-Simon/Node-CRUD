@@ -1,24 +1,29 @@
 const Item = require("../models/item");
 
 // GET all items
+// const getItems = async (req, res) => {
+//   const items = await Item.find().sort({ createdAt: -1 });
+//   res.json(items);
+  
+// };
+
 const getItems = async (req, res) => {
   const items = await Item.find().sort({ createdAt: -1 });
-  res.json(items);
+  res.render("index", { items, title: "Home" });
 };
+
 
 // GET single item
 const getItem = async (req, res) => {
   const item = await Item.findById(req.params.id);
-  res.json(item);
+  res.render("details", { item, title: "Item Details" });
 };
 
 // CREATE item
 const createItem = async (req, res) => {
   try {
     console.log(req.body);
-
     const item = await Item.create(req.body);
-
     res.status(201).json(item);
   } catch (error) {
     console.log(error);
