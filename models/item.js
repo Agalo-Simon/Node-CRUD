@@ -4,16 +4,17 @@ const itemSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: true, message: "Name is required",
     },
     description: {
       type: String,
-      required: true,
+      required: true, message: "Description is required",
     },
     price: {
-      type: Number,
-      required: true,
-      default: 0 
+      type: Number,  
+      required: true, message: "Price is required", 
+      default: 0,
+      min: [0, "Price must be a positive number"],
     },
   },
   { timestamps: true }

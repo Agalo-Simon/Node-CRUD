@@ -24,7 +24,8 @@ const createItem = async (req, res) => {
   try {
     console.log(req.body);
     const item = await Item.create(req.body);
-    res.status(201).json(item);
+    // res.status(201).json(item);
+    res.status(201).render("createItem", { title: "Create Item" });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: error.message });

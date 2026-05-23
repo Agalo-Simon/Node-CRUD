@@ -1,9 +1,9 @@
-<%- include('./partials/head') %>
+<%- include('./partials/header') %>
 
 <div class="container mt-5">
     <div class="d-flex justify-content-end mb-3">
-        <a href="/addItem" class="btn btn-primary">
-            Add New Item
+        <a href="/add" class="btn btn-primary">
+            + Add Item
         </a>
     </div>
 
@@ -44,17 +44,17 @@
                     <td>
 
                         <a
-                          href="/editItem/<%= item._id %>"
+                          href="/edit/<%= item._id %>"
                           class="btn btn-warning btn-sm"
                         >
-                            Edit
+                           <i class="bi bi-pencil-square"></i>
                         </a>
 
                         <a
-                          href="/deleteItem/<%= item._id %>"
+                          href="/delete/<%= item._id %>"
                           class="btn btn-danger btn-sm"
                         >
-                            Delete
+                            <i class="bi bi-trash"></i> Delete
                         </a>
 
                     </td>

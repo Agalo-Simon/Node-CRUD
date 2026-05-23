@@ -15,10 +15,10 @@ app.set("view engine", "ejs");
 
 app.use(
   "/css",
-  express.static(
-    path.join(__dirname, "node_modules/bootstrap/dist/css")
-  )
+  express.static("node_modules/bootstrap/dist/css") 
 );
+//static files
+app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGO_URI).then(() => {
   console.log("Connected to MongoDB")
@@ -30,4 +30,5 @@ mongoose.connect(process.env.MONGO_URI).then(() => {
 });
 
 //--- routes ---
-app.use("/api/items", itemRoutes)
+app.use("/items", itemRoutes)
+// app.use("/add", itemRoutes);
