@@ -5,7 +5,6 @@ const {
   getItems,
   getCreateForm,
   getEditForm,
-  getItem,
   createItem,
   updateItem,
   deleteItem,
