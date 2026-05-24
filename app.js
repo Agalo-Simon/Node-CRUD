@@ -2,7 +2,7 @@ require('node:dns/promises').setServers(['1.1.1.1', '8.8.8.8']);
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-const itemRoutes = require("./route/itemRoutes");
+const itemRoutes = require("./routes/itemRoutes");
 
 const app = express();
 
