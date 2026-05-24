@@ -13,9 +13,7 @@
         </div>
     </div>
 
-    <!-- Main Content Card Wrapper -->
     <div class="card border-0 shadow-sm rounded-3 rounded-md-4 overflow-hidden">
-        
         <% if (items && items.length > 0) { %>
             <!-- Responsive Table Layout -->
             <div class="table-responsive">
@@ -32,7 +30,6 @@
                     <tbody>
                         <% items.forEach((item, index) => { %>
                             <tr>
-                                <!-- Index Row Counter -->
                                 <td class="ps-3 ps-md-4 py-2 py-md-3 fw-medium text-muted small">
                                     <%= index + 1 %>
                                 </td>
