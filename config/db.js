@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const connectDB = async () => {
   try {
     const uri = process.env.MONGO_URI;
-
     // Check if URI is loaded properly
     if (!uri) {
       throw new Error("MONGO_URI environment variable is not defined.");

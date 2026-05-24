@@ -5,11 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
             <% if (errorMessage) { %>
-    <div class="alert alert-danger alert-dismissible fade show rounded-3" role="alert">
-        <i class="bi bi-exclamation-triangle-fill me-2"></i> <%= errorMessage %>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-<% } %>
+            <div class="alert alert-danger alert-dismissible fade show rounded-3" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i> <%= errorMessage %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <% } %>
             <!-- Back Button Link -->
             <div class="mb-3 mb-md-4">
                 <a href="/items" class="text-decoration-none text-muted small">
@@ -23,7 +23,7 @@
                     
                     <div class="mb-3 text-center">
                         <h2 class="fw-bold text-dark fs-3 fs-md-2">Add New Item</h2>
-                        <p class="text-muted small">Fill out the information below to register a new product to your inventory database.</p>
+                        <p class="text-muted small">Fill out the information below to register a new item to your inventory database.</p>
                     </div>
 
                     <hr class="text-muted opacity-25 my-3 my-md-4">
@@ -32,12 +32,12 @@
                         
                         <!-- Name Input (Fixed the missing closing div tag) -->
                         <div class="mb-3 mb-md-4">
-                            <label for="name" class="form-label fw-semibold text-secondary small">Product Name</label>
+                            <label for="name" class="form-label fw-semibold text-secondary small">Item Name</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0 text-muted">
                                     <i class="bi bi-box"></i>
                                 </span>
-                                <input type="text" class="form-control bg-light border-start-0 ps-0 py-2" id="name" name="name" placeholder="Enter product name..." value="<%= oldInput.name || '' %>" required>
+                                <input type="text" class="form-control bg-light border-start-0 ps-0 py-2" id="name" name="name" placeholder="Enter Item name..." value="<%= oldInput.name || '' %>" required>
                             </div>
                         </div>
 
@@ -52,7 +52,7 @@
 
                         <!-- Description Input -->
                         <div class="mb-3 mb-md-4">
-                            <label for="description" class="form-label fw-semibold text-secondary small">Product Description</label>
+                            <label for="description" class="form-label fw-semibold text-secondary small">Item Description</label>
                             <textarea class="form-control bg-light py-2" id="description" name="description" rows="4" placeholder="Describe your item key features, dimensions, or specifications..." required><%= oldInput.description || '' %></textarea>
                         </div> 
                         
@@ -62,7 +62,7 @@
                                 Cancel
                             </a>
                             <button type="submit" class="btn btn-primary px-4 py-2 fw-semibold shadow-sm order-1 order-sm-2 rounded-3">
-                                <i class="bi bi-check-lg me-1"></i> Save Product
+                                <i class="bi bi-check-lg me-1"></i> Save Item
                             </button>
                         </div>
 
